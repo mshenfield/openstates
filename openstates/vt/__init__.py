@@ -2,7 +2,6 @@ from billy.utils.fulltext import pdfdata_to_text, text_after_line_numbers
 from .bills import VTBillScraper
 from .legislators import VTLegislatorScraper
 from .committees import VTCommitteeScraper
-from .events import VTEventScraper
 
 metadata = dict(
     name='Vermont',
@@ -30,6 +29,10 @@ metadata = dict(
             'start_year': 2015,
             'end_year': 2016,
             'sessions': ['2015-2016']},
+           {'name': '2017-2018',
+            'start_year': 2017,
+            'end_year': 2018,
+            'sessions': ['2017-2018']},
            ],
     session_details={'2009-2010': {'type': 'primary',
                                    'display_name': '2009-2010 Regular Session',
@@ -47,10 +50,13 @@ metadata = dict(
                                    'display_name': '2015-2016 Regular Session',
                                    '_scraped_name': '2015-2016 Session',
                                   },
+                     '2017-2018': {'type': 'primary',
+                                   'display_name': '2017-2018 Regular Session',
+                                   '_scraped_name': '2017-2018 Session',
+                                  },
                      },
-    feature_flags=['influenceexplorer'],
+    feature_flags=[],
     _ignored_scraped_sessions= ['2009 Special Session']
-
 )
 
 def session_list():
