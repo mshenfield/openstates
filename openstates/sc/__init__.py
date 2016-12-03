@@ -2,7 +2,6 @@ import lxml.html
 import datetime
 from .bills import SCBillScraper
 from .legislators import SCLegislatorScraper
-from .events import SCEventScraper
 
 settings = dict(SCRAPELIB_TIMEOUT=300)
 
@@ -26,6 +25,9 @@ metadata = dict(
         {'name': '2015-2016',
          'sessions': ['2015-2016'],
          'start_year': 2015, 'end_year': 2016},
+        {'name': '2017-2018',
+         'sessions': ['2017-2018'],
+         'start_year': 2017, 'end_year': 2018},
         ],
     session_details={
         '119': {
@@ -45,8 +47,13 @@ metadata = dict(
             'display_name': '2015-2016 Regular Session',
             '_code': '121',
         },
+        '2017-2018': {
+            '_scraped_name': '122 - (2017-2018)',
+            'display_name': '2017-2018 Regular Session',
+            '_code': '122',
+        },
     },
-    feature_flags=['influenceexplorer'],
+    feature_flags=[],
     _ignored_scraped_sessions=['118 - (2009-2010)', '117 - (2007-2008)',
                                '116 - (2005-2006)', '115 - (2003-2004)',
                                '114 - (2001-2002)', '113 - (1999-2000)',
